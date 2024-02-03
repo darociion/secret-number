@@ -10,7 +10,6 @@ body {
     background: rgb(0,151,188);
     background: linear-gradient(90deg, rgba(0,151,188,1) 0%, rgba(252,70,107,1) 100%);
     font-family: 'Press Start 2P', sans-serif;
-    min-height: 100vh;
     color: #F8F8FF;
 }
 
