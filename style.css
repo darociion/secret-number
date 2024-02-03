@@ -7,7 +7,6 @@
 }
 
 body {
-    /* background-color: #0097BC; */
     background: rgb(0,151,188);
     background: linear-gradient(90deg, rgba(0,151,188,1) 0%, rgba(252,70,107,1) 100%);
     font-family: 'Press Start 2P', sans-serif;
@@ -24,8 +23,7 @@ body {
 }
 
 form {
-    width: 50%;
-    /* background-color: #13232f; */
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 2rem;
     border-radius: 1.8rem;
@@ -36,14 +34,13 @@ h2, h6, .btn {
 }
 
 .number {
-    width: 20%;
+    width: 50%;
     margin: 0 auto;
     height: 4rem;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 .btn {
-    width: 51%;
     margin: auto;
 }
 
@@ -57,4 +54,16 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+@media (min-width: 950px) {
+    form {
+        width: 50%;
+    }
+    .number {
+        width: 20%;
+    }
+    .btn {
+        width: 51%;
+    }
 }
