@@ -15,12 +15,22 @@
                 <h2 class="h2">guess the secret number</h2>
                 <h6 class="h6"></h6>
             </div>
-            <div class="row mb-3">
-              <input type="number" class="number form-control text-center" min="1" max="10">
+            <div class="row mb-3 options">
+                <button id="btn-1" class="option btn-secondary" disabled>1</button>
+                <button id="btn-2" class="option btn-secondary" disabled>2</button>
+                <button id="btn-3" class="option btn-secondary" disabled>3</button>
+                <button id="btn-4" class="option btn-secondary" disabled>4</button>
+                <button id="btn-5" class="option btn-secondary" disabled>5</button>
+                <button id="btn-6" class="option btn-secondary" disabled>6</button>
+                <button id="btn-7" class="option btn-secondary" disabled>7</button>
+                <button id="btn-8" class="option btn-secondary" disabled>8</button>
+                <button id="btn-9" class="option btn-secondary" disabled>9</button>
+                <button id="btn-10" class="option btn-secondary ten" disabled>10</button>
+
             </div>
             <div class="row mb-3">
-                <button onclick="check();" class="btn btn-primary btn-lg mb-3 check">Check</button>
-                <button onclick="newGame();" class="btn btn-primary btn-lg newGame" disabled>New Game</button>
+                <button onclick="start();" class="btn btn-primary btn-lg mb-3 start" disabled>Start</button>
+                <button onclick="newGame();" class="btn btn-primary btn-lg newGame">New Game</button>
             </div>
         </form>
     </div>

@@ -32,6 +32,23 @@ h2, h6, .btn {
     text-transform: uppercase;
 }
 
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option {
+    width: 33.3%;
+    height: 3rem;
+    font-size: 2em;
+    text-align: center;
+}
+
+.ten {
+    width: 99.9%;
+}
+
 .number {
     width: 50%;
     margin: 0 auto;
@@ -43,16 +60,9 @@ h2, h6, .btn {
     margin: auto;
 }
 
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+.wrongOption {
+    background-color: red;
+    color: white;
 }
 
 @media (min-width: 950px) {

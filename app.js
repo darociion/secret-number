@@ -11,20 +11,30 @@ function selectorInit(selector, phrase) {
     title.innerHTML = phrase;
 }
 
-// Check if user number is correct
-function check() {
-    const number = parseInt(document.querySelector('.number').value);
-    if (number === generatedSecretNumber) {
-        selectorInit('h6', 'You win!');
-        document.querySelector('.check').disabled = true;
-        document.querySelector('.newGame').disabled = false;
-    } else if (number > generatedSecretNumber) {
-        selectorInit('h6', 'Wrong number, try lower!');
-        document.querySelector('.number').value = '';
-    }
-    else {
-        selectorInit('h6', 'Wrong number, try higher!');
-        document.querySelector('.number').value = '';
+// Activate buttons and check if user selected option is correct
+function start() {
+    activateButtons();
+
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`btn-${i}`).addEventListener('click', () => {
+            if (i === generatedSecretNumber) {
+                selectorInit('h6', 'You win!');
+                disableButtons();
+                document.querySelector('.start').disabled = true;
+                document.querySelector('.newGame').disabled = false;
+            } else if (i > generatedSecretNumber) {
+                selectorInit('h6', 'Wrong number, try lower!');
+                document.getElementById(`btn-${i}`).disabled = true;
+                document.getElementById(`btn-${i}`).classList.add('wrongOption');
+                document.getElementById(`btn-${i}`).innerText = "x";
+            }
+            else {
+                selectorInit('h6', 'Wrong number, try higher!');
+                document.getElementById(`btn-${i}`).disabled = true;
+                document.getElementById(`btn-${i}`).classList.add('wrongOption');
+                document.getElementById(`btn-${i}`).innerText = "x";
+            }
+        });
     }
 }
 
@@ -32,9 +42,22 @@ function check() {
 function newGame() {
     generatedSecretNumber = secretNumber();
     selectorInit('h6', 'between 1 and 10');
-    document.querySelector('.number').value = '';
-    document.querySelector('.check').disabled = false;
+    document.querySelector('.start').disabled = false;
     document.querySelector('.newGame').disabled = true;
+}
+
+function activateButtons() {
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`btn-${i}`).disabled = false;
+    }
+}
+
+function disableButtons() {
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`btn-${i}`).disabled = true;
+        document.getElementById(`btn-${i}`).classList.remove('wrongOption');
+        document.getElementById(`btn-${i}`).innerText = i;
+    }
 }
 
 newGame();
