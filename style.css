@@ -49,13 +49,6 @@ h2, h6, .btn {
     width: 99.9%;
 }
 
-.number {
-    width: 50%;
-    margin: 0 auto;
-    height: 4rem;
-    font-size: 2em;
-}
-
 .btn {
     margin: auto;
 }
@@ -68,9 +61,6 @@ h2, h6, .btn {
 @media (min-width: 950px) {
     form {
         width: 50%;
-    }
-    .number {
-        width: 20%;
     }
     .btn {
         width: 51%;
